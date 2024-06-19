@@ -1,0 +1,140 @@
+.centered-container {
+  background-color: #E8DED4;
+  min-height: 89.5vh;
+  position: relative;
+  padding: 20px;
+}
+
+.registration-container {
+  background-color: #E8DED4;
+  border: 1px solid #101010;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-row {
+  flex-wrap: nowrap;
+}
+
+.form-group {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  color: #0b0338;
+}
+
+.form-check-label {
+  margin-left: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]  {
+  border-color: #111112;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border: 1.9px solid #1919d1a9;
+}
+
+#countryCode {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  border-color:  #111112;
+  transition: border-color 0.3s;
+}
+
+#countryCode:focus {
+  border: 1.9px solid #1919d1a9;
+}
+
+#gender {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  border-color:  #111112;
+}
+
+#gender:focus{
+  border: 1.9px solid #1919d1a9;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.asterisk::after {
+  content: " *";
+  color: #ec3636;
+  font-size: 20;
+}
+
+.button-container button {
+  margin: 0 10px;
+}
+
+.input-with-button {
+  display: flex;
+  align-items: center;
+}
+
+.no-border {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-white {
+  background-color: white;
+}
+
+.button-eye {
+  font-size: 20px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-with-button .btn {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .registration-container {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,89 @@
+.container-que {
+  overflow: hidden;
+  height: 100vh;
+  padding-top: 70px;
+}
+
+.navbar {
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-link {
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-link.active {
+  background-color: #007bff;
+}
+
+.question-container {
+  margin-top: 30px;
+}
+
+.question-card {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question-card .mat-radio-button {
+  margin-bottom: 10px;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group .btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button-group .btn:first-child {
+  margin-right: 10px;
+}
+
+.button-group .btn:last-child {
+  margin-left: 10px;
+}
+
+.navbar-time {
+  font-size: large;
+  background-color: azure;
+  color: #343a40;
+  padding: 10px 20px 0px 20px;
+  margin: 10px 10px 20px 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.quizName {
+  text-transform: capitalize;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+}
+.feedback-btn{
+   display: flex;
+   justify-content: end;
+   margin-top: 20px; 
+   position: fixed;
+   bottom: 0;
+   right: 0;
+}
+

@@ -1,0 +1,49 @@
+<div class="container">
+  <form #feedbackForm="ngForm">
+    <div class="mb-3">
+      <label for="quiz" class="form-label">Test</label>
+      <input
+        type="text"
+        class="form-control text-capitalize"
+        id="quiz"
+        name="quiz"
+        required
+        [value]="question?.quizTitle"
+        readonly
+      />
+    </div>
+    <div class="mb-3">
+      <label for="question" class="form-label">Question</label>
+      <input
+        type="text"
+        class="form-control"
+        id="question"
+        name="question"
+        style="height: auto;"
+        required
+        [value]="question?.que"
+        readonly
+      />
+    </div>
+    <div class="mb-3">
+      <label for="feedbackText" class="form-label">Feedback</label>
+      <textarea
+        class="form-control"
+        id="feedbackText"
+        name="feedbackText"
+        rows="4"
+        required
+        [(ngModel)]="feedback.feedbackText"
+        #feedbackText="ngModel"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="feedback.feedbackText == null"
+      (click)='submitFeedback()'
+    >
+      Submit
+    </button>
+  </form>
+</div>

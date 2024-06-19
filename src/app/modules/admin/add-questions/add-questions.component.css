@@ -1,0 +1,9 @@
+.quizcontainer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-x: hidden;
+    padding-top: 70px;
+  }

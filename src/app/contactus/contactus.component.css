@@ -1,0 +1,74 @@
+  
+  .background-image {
+    background-image: url('https://media.istockphoto.com/id/1308052781/photo/hand-of-businessman-holding-mobile-smartphone-with-icon-customer-support-concept-copy-space.jpg?s=612x612&w=0&k=20&c=f2eyiFVPidkA8jVBP_et-9wTHuBP0QthUr2O0vnjRj8=');
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0%;
+  }
+  
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .formbold-main-wrapper {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  .formbold-form-wrapper {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .formbold-form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .formbold-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .formbold-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .formbold-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .formbold-form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .formbold-mb-5 {
+    margin-bottom: 20px;
+  }
+  

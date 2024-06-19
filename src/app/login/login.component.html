@@ -1,0 +1,38 @@
+<div class="body-form">
+    <app-loginnavbar></app-loginnavbar>
+    <div class="login-container mt-5">
+        <h2 class="heading text-center mt-2">Welcome To PruebaExamen</h2>
+        <div class="login-form">
+            <div class="form-data">
+                <form #loginform="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group1 mb-3">
+                        <label class="asterisk"><i class="fa-solid fa-circle-user"></i> Username</label>
+                        <input type="text" class="form-control1" id="username" name="username"
+                            [(ngModel)]="loginForm.username" (input)="validateUsername()" required />
+                        <div class="error">{{ usernameError }}</div>
+                    </div>
+
+                    <div class="form-group2">
+                        <label class="asterisk"><i class="fa-solid fa-lock"></i> Password</label>
+                        <div class="input-with-button">
+                            <input type="{{ hidePassword ? 'password' : 'text' }}" class="form-control2" id="password"
+                                name="password" [(ngModel)]="loginForm.password" (input)="validatePassword()"
+                                required />
+                            <button type="button" class="btn btn-sm btn-white mx-3 no-border" (click)="passwordHide()">
+                                <i class="bi bi-eye{{ hidePassword ? '-slash' : '' }} button-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error">{{ passwordError }}</div>
+                    </div>
+                    <a id="forgot" href="enteremail">Forgot password?</a>
+
+                    <button type="submit" class="btn btn-primary" id="sign">
+                        <h6>SIGN IN</h6>
+                    </button>
+                </form>
+                <p>Don't have an account? <a href="register"> Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+    <app-loginfooter></app-loginfooter>
+</div>

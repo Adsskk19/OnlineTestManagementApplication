@@ -1,0 +1,73 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 70px;
+}
+
+.input-group {
+    padding-top: 1px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    width: 38%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+#search {
+    width: 82%;
+}
+
+.input-border {
+    border: 1.5px solid #000;
+}
+
+.table {
+    width: 110%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.table-striped th {
+    background-color: #7d7c7cb3;
+    padding: 15px;
+    border: 1.5px solid #1b1b1b;
+}
+
+.table-striped td {
+    padding: 2.5px;
+    vertical-align: middle;
+    border: 1.5px solid #1b1b1b;
+}
+
+.pagination-controls {
+    font-weight: bold;
+    text-align: center;
+}
+
+.empty-list-message {
+    text-align: center;
+    font-size: large;
+    font-family: cursive;
+    padding-left: 145px;
+    color: red;
+    animation: moveContent 2s linear infinite;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@keyframes moveContent {
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+    }
+}

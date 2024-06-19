@@ -1,0 +1,91 @@
+<app-student-navbar></app-student-navbar>
+<div class="bg">
+  <div class="update-container mt-4 mb-4">
+    <form [formGroup]="profileForm" (ngSubmit)="updateStudentProfile(profileForm.value)">
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px;">
+          <label><i class="fa-solid fa-circle-user"></i> Firstname</label>
+          <input type="text" id="firstName" placeholder="Enter the firstname" formControlName="firstName"
+            [readonly]="true">
+        </div>
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label><i class="fa-solid fa-circle-user"></i> Lastname</label>
+          <input type="text" id="lastName" placeholder="Enter the lastname" formControlName="lastName"
+            [readonly]="true">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px;">
+          <label><i class="fa-solid fa-circle-user"></i> Username</label>
+          <input type="text" id="userName" placeholder="Username" formControlName="userName" [readonly]="true">
+        </div>
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label class="asterisk"><i class="fa-solid fa-lock"></i> Password</label>
+          <div class="input-container">
+            <div class="input-with-button">
+              <input type="{{ hidePassword ? 'password' : 'text' }}" id="password" name="password"
+                formControlName="password" placeholder="Enter the password" (focus)="showPasswordError = true"
+                (input)="onPassword()" maxlength="19" required>
+              <button type="button" class="btn btn-sm btn-white mx-3 no-border" (click)="passwordHide()">
+                <i class="bi bi-eye{{ hidePassword ? '-slash' : '' }} button-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="error" *ngIf="showPasswordError && !profileForm.get('password').valid">
+            Should contain at least 1 capital, small, digit, special char without white space
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px;">
+          <label class="asterisk"><i class="fa-solid fa-globe"></i> Country</label>
+          <select id="countryCode" name="countryCode" formControlName="countryCode"
+            (focus)="showCountryCodeError = true" (input)="onCountryCode()" required>
+            <option value="">Select Country</option>
+            <option *ngFor="let country of countryList" [value]="country.countryCode + ' ' + country.countryName">
+              {{ country.countryName }} (+{{ country.countryCode }})
+            </option>
+          </select>
+          <div class="error" *ngIf="showCountryCodeError && !profileForm.get('countryCode').valid">
+            Please select a country
+          </div>
+        </div>
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label class="asterisk"><i class="fa-solid fa-phone"></i> Phone Number</label>
+          <input type="text" id="onPhoneNumber" placeholder="Phone Number" formControlName="phoneNumber"
+            (focus)="showPhoneNumberError = true" (input)="onPhoneNumbers($event)" maxlength="10" required>
+          <div class="error" *ngIf="showPhoneNumberError && !profileForm.get('phoneNumber').valid">
+            Mobile number must be 10 digits
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label class="asterisk"><i class="fa-solid fa-envelope"></i> Email</label>
+          <input type="email" id="email" placeholder="Enter the email" formControlName="email"
+            (focus)="showEmailError = true" (input)="onEmail()" required>
+          <div class="error" *ngIf="showEmailError && !profileForm.get('email').valid">
+            Invalid email format
+          </div>
+        </div>
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label><i class="fa-sharp fa-solid fa-user"></i> Gender</label>
+          <input type="text" id="gender" placeholder="Gender" formControlName="gender" [readonly]="true">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 200px">
+          <label><i class="fa-regular fa-circle-dot"></i> Role</label>
+          <input type="text" id="role" placeholder="Role" formControlName="role" [readonly]="true">
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="submit" class="btn btn-success mb-2 mt-2"><i class="fa-solid fa-pen-to-square"></i>
+          Update</button>
+        <button type="button" class="btn btn-outline-secondary mb-2 mt-2" (click)="clear()"><i
+            class="fa-sharp fa-solid fa-xmark"></i> Clear</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-student-footer></app-student-footer>

@@ -1,0 +1,33 @@
+<app-student-navbar></app-student-navbar>
+<div class="bg">
+    <div class="page-container" style="height: 92vh;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <h2 class="text-center text-primary"
+                        style="text-decoration: underline; padding-top: 70px; padding-bottom: 1px; font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Score Board
+                    </h2>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Test Title</th>
+                                <th class="text-center">Score</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let score of scores">
+                                <td class="text-center">{{score.quizTitle}}</td>
+                                <td class="text-center">{{score.percentage}}</td>
+                                <td class="text-center">{{score.dateTaken | date}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-student-footer></app-student-footer>

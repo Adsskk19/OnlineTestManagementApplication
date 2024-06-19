@@ -1,0 +1,140 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="bg">
+  <div class="container-fluid pt-5">
+    <div
+      class="d-flex flex-column justify-content-center align-items-center mb-3"
+    >
+      <div>
+        <h2 class="text-center pt-5 title">Test</h2>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="btn ml-3"
+          style="background-color: black; color: white"
+          data-toggle="modal"
+          data-target="#addQuizModal"
+        >
+          + Add Test
+        </button>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="quizCard card m-3" *ngFor="let quiz of quizes">
+        <img
+          class="card-img-top"
+          src="{{ quiz.quizImg }}"
+          alt="Card image cap"
+          style="height: 150px"
+        />
+        <div
+          class="card-body d-flex justify-content-between align-items-center"
+        >
+          <button
+            mat-mini-fab
+            color="primary"
+            data-toggle="modal"
+            data-target="#addQuizModal"
+            (click)="openUpdateModal(quiz)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <h5
+            class="card-title mb-0"
+            style="cursor: pointer; text-transform: uppercase"
+          >
+            <a
+              style="font-size: 15px; text-decoration: none; color: #333"
+              (click)="openQuiz(quiz.title)"
+              >{{ quiz.title }}</a
+            >
+          </h5>
+          <button mat-mini-fab color="warn" (click)="deleteQuestion(quiz)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div
+    class="modal fade"
+    id="addQuizModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="addQuizModalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title"
+            id="addQuizModalTitle"
+            style="font-size: medium"
+          >
+            {{ newQuiz.id ? "Update Quiz" : "Add New Quiz" }}
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            (click)="reload()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form
+          (ngSubmit)="addAndUpdateQuestion(newQuiz)"
+          #questionForm="ngForm"
+          novalidate
+        >
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="que">Test Title:</label>
+              <input
+                class="form-control"
+                id="quiz"
+                name="quiz"
+                style="text-transform: uppercase"
+                [(ngModel)]="newQuiz.title"
+                [disabled]="newQuiz.id"
+                required
+              />
+            </div>
+            <div>
+              <label for="que">Test Image Url:</label>
+              <input
+                class="form-control"
+                id="quizImg"
+                name="quizImg"
+                [(ngModel)]="newQuiz.quizImg"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              (click)="reload()"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="!questionForm.valid"
+            >
+              {{ newQuiz.id ? "Update Quiz" : "Add Quiz" }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-admin-footer></app-admin-footer>
+</div>

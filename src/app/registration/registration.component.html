@@ -1,0 +1,111 @@
+<app-loginnavbar></app-loginnavbar>
+<div class="centered-container">
+  <div class="registration-container mt-2">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px;">
+          <label class="asterisk"><i class="fa-solid fa-circle-user"></i> Firstname</label>
+          <input type="text" id="firstName" name="firstName" formControlName="firstName"
+            placeholder="Enter the firstname" (focus)="showFirstNameError = true" (input)="onFirstName()" required>
+          <div class="error" *ngIf="showFirstNameError && !registrationForm.get('firstName').valid">
+            Should contain only alphabets, start with a capital letter
+          </div>
+        </div>
+
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label class="asterisk"><i class="fa-solid fa-circle-user"></i> Lastname</label>
+          <input type="text" id="lastName" name="lastName" formControlName="lastName" placeholder="Enter the lastname"
+            (focus)="showLastNameError = true" (input)="onLastName()" required>
+          <div class="error" *ngIf="showLastNameError && !registrationForm.get('lastName').valid">
+            Should contain only alphabets, start with a capital letter
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px;">
+          <label class="asterisk"><i class="fa-solid fa-circle-user"></i> Username</label>
+          <input type="text" id="userName" name="userName" formControlName="userName" placeholder="Enter the username"
+            (focus)="showUserNameError = true" (input)="onUserName()" required>
+          <div class="error" *ngIf="showUserNameError && !registrationForm.get('userName').valid">
+            Can have alphabets, numbers and special characters like _ and @
+          </div>
+        </div>
+
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label class="asterisk"><i class="fa-solid fa-lock"></i> Password</label>
+          <div class="input-container">
+            <div class="input-with-button">
+              <input type="{{ hidePassword ? 'password' : 'text' }}" id="password" name="password"
+                formControlName="password" placeholder="Enter the password" (focus)="showPasswordError = true"
+                (input)="onPassword()" maxlength="19" required>
+              <button type="button" class="btn btn-sm btn-white mx-3 no-border" (click)="passwordHide()">
+                <i class="bi bi-eye{{ hidePassword ? '-slash' : '' }} button-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="error" *ngIf="showPasswordError && !registrationForm.get('password').valid">
+            Should contain at least 1 capital, small, digit, special char without white space
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px;">
+          <label class="asterisk"><i class="fa-solid fa-globe"></i> Country</label>
+          <select id="countryCode" name="countryCode" formControlName="countryCode"
+            (focus)="showCountryCodeError = true" (input)="onCountryCode()" required>
+            <option value="">Select Country</option>
+            <option *ngFor="let country of countryList" [value]="country.countryCode + ' ' + country.countryName">
+              {{ country.countryName }} (+{{ country.countryCode }})
+            </option>
+          </select>
+          <div class="error" *ngIf="showCountryCodeError && !registrationForm.get('countryCode').valid">
+            Please select a country
+          </div>
+        </div>
+
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label class="asterisk"><i class="fa-solid fa-phone"></i> Phone Number</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber"
+            placeholder="Enter the phone number" (focus)="showPhoneNumberError = true" (input)="onPhoneNumbers($event)"
+            required maxlength="10">
+          <div class="error" *ngIf="showPhoneNumberError && !registrationForm.get('phoneNumber').valid">
+            Mobile number must be 10 digits
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6" style="margin-left: 15px; margin-bottom: 10px">
+          <label class="asterisk"><i class="fa-solid fa-envelope"></i> Email</label>
+          <input type="email" id="email" name="email" formControlName="email" placeholder="Enter the email"
+            (focus)="showEmailError = true" (input)="onEmail()" required>
+          <div class="error" *ngIf="showEmailError && !registrationForm.get('email').valid">
+            Invalid email format
+          </div>
+        </div>
+
+        <div class="form-group col-md-6" style="margin-left: 15px;">
+          <label class="asterisk"><i class="fa-sharp fa-solid fa-user"></i> Gender</label>
+          <select id="gender" name="gender" formControlName="gender" (focus)="showGenderError = true"
+            (input)="onGender()" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select>
+          <div class="error" *ngIf="showGenderError && !registrationForm.get('gender').valid">
+            Please select a gender
+          </div>
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="btn btn-success mt-3 mx-2" type="submit"><i class="fa-solid fa-thumbs-up"></i> Register</button>
+        <button type="button" class="btn btn-outline-secondary mt-3 mx-2" (click)="clear()"><i
+            class="fa-sharp fa-solid fa-xmark"></i> Clear</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-loginfooter></app-loginfooter>

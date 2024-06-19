@@ -1,0 +1,169 @@
+.body-form {
+    background-image: url("../../assets/login1.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-data {
+    background-color: rgba(0, 0, 0, 0.553);
+    padding: 20px 0px 20px 20px;
+    color: white;
+    border-radius: 10px;
+    margin: 100px 50px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-control1 {
+    width: 90%;
+    height: 30px;
+    border-color: white;
+    border-top: white;
+    border-left: white;
+}
+
+.input-with-button {
+    display: flex;
+}
+
+.no-border {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.button-eye {
+    font-size: 20px;
+}
+
+.input-with-button {
+    width: 90%;
+    background-color: white;
+}
+
+.form-control2 {
+    width: 115%;
+    height: 30px;
+    border-radius: 0%;
+    border-color: white;
+    border-top: white;
+    border-left: white;
+}
+
+#sign:hover {
+    background-color: rgb(128, 172, 128);
+}
+
+#sign {
+    border-color: rgb(195, 195, 195);
+    border-radius: 0%;
+    margin-top: 4%;
+    width: 88.5%;
+    padding-left: 2%;
+    margin-left: 2%;
+    height: 30px;
+    margin-bottom: 3%;
+    background-color: rgb(195, 195, 195);
+}
+
+#forgot {
+    font-size: small;
+    font-style: italic;
+    padding-top: 5%;
+    margin-left: 2%;
+}
+
+.heading {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-weight: 600;
+    color: rgb(3, 3, 78);
+}
+
+h6 {
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+label {
+    margin-left: 1.3%;
+}
+
+p {
+    font-size: small;
+    font-style: italic;
+    text-align: center;    
+    padding-top: 2%;
+    margin-left: -6%;
+}
+
+.form-control1:hover,
+.form-control2:hover {
+    border: 2px solid #b7b2b2b3;
+    background-color: #f8f9fa;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.error {
+    color: #f00;
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.asterisk::after {
+    content: " *";
+    color: #ec3636;
+    font-size: 20;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-form {
+        width: 35%;
+        margin: 6% 4% 5% 8%;
+    }
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.centered-container {
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.asterisk::after {
+    content: " *";
+    color: #ec3636;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    margin-top: 20px;
+}

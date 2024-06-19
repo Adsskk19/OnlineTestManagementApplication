@@ -1,0 +1,62 @@
+
+
+<div class="bg">
+  <app-student-navbar></app-student-navbar>
+  <div class="container-fluid pt-5">
+    <h1 class="text-center mt-5">Test</h1>
+    <div class="row d-flex-row justify-content-center">
+      <div *ngFor="let quiz of quizes">
+        <div class="quizCard card m-3" *ngIf="quiz.questions.length > 0">
+          <img
+            class="card-img-top"
+            src="{{ quiz.quizImg }}"
+            alt="Card image cap"
+            style="height: 150px"
+          />
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4
+                style="
+                  text-decoration: none;
+                  color: #333;
+                  text-transform: uppercase;
+                  margin-top: 6px;
+                "
+              >
+                {{ quiz.title }}
+              </h4>
+              <div>
+                <button
+                  mat-button
+                  color="primary"
+                  *ngIf="!getScore(quiz.title)"
+                  (click)="openQuiz(quiz.title)"
+                >
+                  Take Test
+                </button>
+                <!-- <button
+                  mat-button
+                  color="primary"
+                  *ngIf="getScore(quiz.title) && canRetakeQuiz(quiz.title)"
+                  (click)="openQuiz(quiz.title)"
+                >
+                  Retake Quiz
+                </button> -->
+                <button
+                  mat-button
+                  color="primary"
+                  *ngIf="getScore(quiz.title) "
+                  [disabled]="!canRetakeQuiz(quiz.title)"
+                  (click)="openQuiz(quiz.title)"
+                >
+                  Retake Test <br> <span *ngIf="!canRetakeQuiz(quiz.title)">In {{ formatTime(remainingTime) }}</span> 
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

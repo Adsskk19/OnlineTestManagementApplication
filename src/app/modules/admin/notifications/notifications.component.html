@@ -1,0 +1,36 @@
+<div
+  class="notification-item"
+  *ngIf="feedbackList?.length > 0; else noFeedbackTemplate"
+>
+  <div *ngFor="let feedback of feedbackList">
+    <div class="row" [ngClass]="{'seen': feedback.seenStatus, 'unseen': !feedback.seenStatus}">
+      <div class="col col-1" style="padding-right: 0;">
+        <div class="avatar">{{ getInitials(feedback.userName) }}</div>
+      </div>
+      <div class="col col-4 d-flex align-items-center">
+        <div class="m-0">
+          <span style="font-weight: 600"> {{ feedback.userName }}</span> <br />
+          <a [href]="'mailto:' + feedback.user.email" class="email">{{
+            feedback.user.email
+          }}</a
+          ><br />
+          <span class="date">{{ feedback.feedbackDate }}</span>
+        </div>
+      </div>
+      <div class="col col-7">
+        <p style="text-transform: capitalize" class="m-0">
+          {{ feedback.quizTitle }} -
+          <span style="color: #757575">{{ feedback.queNo }}</span>
+        </p>
+        <p style="font-size: 13px">
+          <span style="font-weight: 600; color: #3f51b5">Feedback -</span>
+          {{ feedback.studentFeedback }}
+        </p>
+      </div>
+    </div>
+    <hr style="margin-top: 10px; margin-bottom: 10px" />
+  </div>
+</div>
+<ng-template #noFeedbackTemplate>
+  <h3 style="color: #757575">No Feedback Available</h3>
+</ng-template>

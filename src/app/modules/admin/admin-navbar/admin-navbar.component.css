@@ -1,0 +1,83 @@
+.navbar {
+    background-color: rgba(25, 25, 24, 0.785);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 30px;
+    top: 0; 
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    
+}
+  
+.active {
+    background-color: black;
+    border-radius: 8px;
+  }
+  
+.navbar__logo {
+    color: #00bfff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: cursive;
+}
+  
+.navbar__title {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: Playfair Display;
+}
+  
+.logout-button {
+    font-size: 14px;
+}
+ .nav1:hover::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: rgb(23, 116, 192);
+    display: block;
+}
+  
+.nav2:hover::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: rgb(23, 116, 192);
+    display: block;
+  }
+  
+.nav3:hover::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: rgb(23, 116, 192);
+    display: block;
+  }
+  
+  .nav4:hover::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: rgb(23, 116, 192);
+    display: block;
+  }
+  
+  .nav5:hover::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: rgb(23, 116, 192);
+    display: block;
+  }
+  
+ /* .nav6:hover::after {
+    content: '';
+    height: 2px;
+    width: 130px;
+    background-color: rgb(192, 167, 23);
+    display: block;
+  } */

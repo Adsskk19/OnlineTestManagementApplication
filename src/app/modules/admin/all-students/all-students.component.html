@@ -1,0 +1,62 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="bg">
+  <div class="page-container" style="height: 91vh;">
+    <div class="navbar">
+      <div class="input-group">
+        <input type="text" name="searchQuery" [(ngModel)]="searchQuery" (ngModelChange)="searchByNameEmailPhone()"
+          placeholder="Search Student By Name, Email Or Phone Number..." id="search" class="input-border">
+        <button class="btn btn-secondary" (click)="reset()">Reset</button>
+      </div>
+      <div *ngIf="emptyList" class="empty-list-message">
+        No user available...
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <h2 class="text-center text-primary" style="text-decoration: underline; padding-top: 0; padding-bottom: 1px;">Registered
+            User Details <i class="fa-solid fa-circle-down"></i></h2>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th (click)="orderBy('firstName')" class="text-center"><i class="fa-solid fa-circle-user"></i> Firstname
+                  <i class="fa fa-sort"></i>
+                </th>
+                <th (click)="orderBy('lastName')" class="text-center"><i class="fa-solid fa-circle-user"></i> Lastname
+                  <i class="fa fa-sort"></i>
+                </th>
+                <th (click)="orderBy('userName')" class="text-center"><i class="fa-solid fa-circle-user"></i> Username
+                  <i class="fa fa-sort"></i>
+                </th>
+                <th (click)="orderBy('email')" class="text-center"><i class="fa-solid fa-envelope"></i> Email
+                  <i class="fa fa-sort"></i>
+                </th>
+                <th (click)="orderBy('countryCode')" class="text-center"><i class="fa-solid fa-globe"></i> Country
+                  <i class="fa fa-sort"></i>
+                </th>
+                <th (click)="orderBy('phoneNumber')" class="text-center"><i class="fa-solid fa-phone"></i> Phone
+                  Number <i class="fa fa-sort"></i>
+                </th>
+                <th (click)="orderBy('gender')" class="text-center"><i class="fa-sharp fa-solid fa-user"></i> Gender <i
+                    class="fa fa-sort"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students | paginate:{itemsPerPage:5,currentPage:p};">
+                <td class="text-center">{{student.firstName}}</td>
+                <td class="text-center">{{student.lastName}}</td>
+                <td class="text-center">{{student.userName}}</td>
+                <td class="text-center">{{student.email}}</td>
+                <td class="text-center">{{student.countryCode}}</td>
+                <td class="text-center">{{student.phoneNumber}}</td>
+                <td class="text-center">{{student.gender}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination-controls class="pagination-controls" (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-admin-footer></app-admin-footer>

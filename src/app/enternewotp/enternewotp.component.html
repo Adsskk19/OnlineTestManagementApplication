@@ -1,0 +1,43 @@
+<app-loginnavbar></app-loginnavbar>
+<div class="centeredcontainerbackground">
+  <div class="form-container">
+    <div class="centered-container">
+      <div class="email-container">
+        <h4 style="font-weight: bolder; font-size: x-large; color: #08088a;">Enter Otp & New Password</h4>
+
+        <form [formGroup]="combinedForm" (ngSubmit)="submitCombinedForm()">
+
+          <div class="form-group">
+            <label for="otp" class="asterisk" style="font-size: small; margin-right: 89%; font-weight: bold;">
+              <i class="fa-solid fa-key"></i> OTP</label>
+            <input type="text" id="otp" name="otp" class="form-controls" formControlName="otp" placeholder="Enter OTP">
+          </div>
+
+          <div class="form-group">
+            <label for="newPassword" class="asterisk" style="font-size: small; margin-right: 76%; font-weight: bold;">
+              <i class="fa-solid fa-lock"></i> New Password</label>
+
+            <div class="input-with-button">
+              <input type="{{ hidePassword ? 'password' : 'text' }}" (focus)="showPasswordError = true"
+                (input)="onPassword()" id="newPassword" name="newPassword" class="form-controls"
+                formControlName="newPassword" placeholder="Enter new password" maxlength="19">
+              <button type="button" id="eye" class="btn btn-sm btn-white no-border" (click)="passwordHide()">
+                <i class="bi bi-eye{{ hidePassword ? '-slash' : '' }} button-eye"></i>
+              </button>
+            </div>
+            <div class="error" *ngIf="showPasswordError && !combinedForm.get('newPassword').valid">
+              Should contain at least 1 capital, small, digit, special char without white space
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button class="btn btn-outline-success mt-1" type="submit">
+              <i class="fa-solid fa-thumbs-up"></i> OK
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loginfooter></app-loginfooter>

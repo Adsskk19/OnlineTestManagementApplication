@@ -1,0 +1,24 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.table {
+    width: 50%;
+    height: 55%;
+    margin: 0 auto;
+}
+
+.table-striped th {
+    background-color: #7d7c7cb3;
+    padding: 15px;
+    border: 1.5px solid #1b1b1b;
+}
+
+.table-striped td {
+    padding: 0px;
+    vertical-align: middle;
+    border: 1.5px solid #1b1b1b;
+}

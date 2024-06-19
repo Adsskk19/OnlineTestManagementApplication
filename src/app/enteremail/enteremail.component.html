@@ -1,0 +1,27 @@
+<app-loginnavbar></app-loginnavbar>
+<div class="centeredcontainerbackground">
+  <div *ngIf="showEmailTextBox" class="form-container">
+    <div class="centered-container">
+      <div class="email-container">
+        <h4 style="font-weight: bolder; font-size: x-large; color: #08088a;">Reset your Password</h4>
+        <h6 class="forgotH6">Enter your email address and we will send you </h6>
+        <h6 style="font-size: 15px; font-style: normal;">instructions to reset your password</h6>
+        <form [formGroup]="emailForm" (ngSubmit)="forgotPassword()">
+          <div class="form-group">
+            <label for="email" class="asterisk" style="font-size: small; margin-right: 87%; font-weight: bold;"><i
+                class="fa-solid fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" class="form-controls" formControlName="email"
+              placeholder="Enter the email">
+          </div>
+          <div class="button-container">
+            <button class="btn btn-outline-success mt-3 mx-2" type="submit">
+              <i class="fa-solid fa-thumbs-up"></i> Continue
+            </button>
+          </div>
+          <a href=""> <i class="fa-solid fa-arrow-left"></i> Go back to PruebaExamen</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loginfooter></app-loginfooter>

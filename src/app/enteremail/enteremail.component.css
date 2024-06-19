@@ -1,0 +1,64 @@
+.centeredcontainerbackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 5px;
+}
+
+.form-container {
+  width: 45%;
+}
+
+.email-container {
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid #090909;
+  border-right: 7px solid #3e3e3e;
+  border-bottom: 7px solid #3e3e3e;
+}
+
+.forgotH6 {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.asterisk::after {
+  content: " *";
+  color: #ec3636;
+  font-size: 20;
+}
+
+.form-controls {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 3px;
+}
+
+.button-container {
+  margin-top: 5px;
+  margin-left: -6px;
+  margin-right: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
